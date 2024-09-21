@@ -1,4 +1,10 @@
-On tty
+## config VM
+
+4GB Ram
+2 CPU's
+64GB Disk
+
+## Start SSH 
 
 /etc/init.d/sshd start    
 
@@ -161,48 +167,3 @@ cd /
 touch fixtime  
 find . -cnewer /fixtime -exec touch {} \;   <-- ignore errors
 
-
-
-
-POST
-
-Log onto tty
-
-nano /etc/ssh/sshd_config <-- password to yes
-/etc/init.d/sshd start
-rc-update add sshd default
-
-Log onto ssh
-
-emerge --ask sys-kernel/dracut
-dracut
-
-nano /etc/fstab
-
-/dev/sda1   /boot        vfat    umask=0077     0 2
-/dev/sda2   none         swap    sw                   0 0
-/dev/sda3   /            ext4    defaults,noatime              0 1
-/dev/cdrom  /mnt/cdrom   auto    noauto,user          0 0
-
-echo gentoo > /etc/hostname
-
-sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
-locale-gen
-
-eselect locale list
-eselect locale set <locale>
-
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-
-set up NTP
-
-nano /etc/conf.d/hwclock
-clock="local"
-
-Fix clock skew
-cd /
-touch fixtime
-find . -cnewer /fixtime -exec touch {} \; <-- ignore errors
-
-emerge --ask net-misc/ntp
-rc-update add ntp-client default
