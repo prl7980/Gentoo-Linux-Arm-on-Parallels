@@ -138,7 +138,13 @@ echo gentoo > /etc/hostname
 nano /etc/inittab  
 comment last line
 
-## reboot system
+## Enable SSHD
+
+nano /etc/ssh/sshd_config <-- password to yes  
+
+rc-update add sshd default
+
+## Reboot system
 
 exit  
 cd  
