@@ -32,10 +32,10 @@ tar xpvf <downloaded stage 3 file> --xattrs-include='*.*' --numeric-owner
 
 nano /etc/portage/make.conf    
 
-MAKEOPTS="-j2"
-ACCEPT_LICENSE="-* @FREE @BINARY-REDISTRIBUTABLE"
-GRUB_PLATFORMS="efi-64"
-CPU_FLAGS_ARM="aes sha3 crc32 neon v8 vfpv4"
+MAKEOPTS="-j2"  
+ACCEPT_LICENSE="-* @FREE @BINARY-REDISTRIBUTABLE"  
+GRUB_PLATFORMS="efi-64"  
+CPU_FLAGS_ARM="aes sha3 crc32 neon v8 vfpv4"  
 
 
 ## Enter chroot
