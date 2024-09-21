@@ -63,13 +63,13 @@ emerge --verbose --update --deep --newuse @world
 
 ## timezone and locale
 
-echo "America/Vancouver" > /etc/timezone
+echo "America/Vancouver" > /etc/timezone  
 emerge --config sys-libs/timezone-data
 
-sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
+sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen  
 locale-gen
 
-eselect locale list
+eselect locale list  
 eselect locale set <locale>
 
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
