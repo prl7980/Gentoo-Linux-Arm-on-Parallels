@@ -133,6 +133,11 @@ nano /etc/fstab
 
 echo gentoo > /etc/hostname
 
+## Disable F0
+
+nano /etc/inittab
+comment last line
+
 ## reboot system
 
 exit  
