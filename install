@@ -123,9 +123,10 @@ eselect locale set locale
 
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
+set up NTP
 
 nano /etc/conf.d/hwclock
-set local
+set local time
 
 Fix clock skew
 cd /
