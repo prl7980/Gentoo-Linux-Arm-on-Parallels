@@ -70,7 +70,7 @@ sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 locale-gen
 
 eselect locale list  
-eselect locale set <locale>
+eselect locale set 4  <-- check that 4 is correct
 
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
@@ -78,8 +78,8 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" | tee -a /etc/portage/package.license
 
-emerge --ask sys-kernel/linux-firmware  
-emerge --ask sys-kernel/gentoo-sources
+emerge sys-kernel/linux-firmware  
+emerge sys-kernel/gentoo-sources
 
 eselect kernel list  
 eselect kernel set 1
