@@ -78,38 +78,38 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" | tee -a /etc/portage/package.license
 
-emerge --ask sys-kernel/linux-firmware
+emerge --ask sys-kernel/linux-firmware  
 emerge --ask sys-kernel/gentoo-sources
 
-eselect kernel list
+eselect kernel list  
 eselect kernel set 1
 
-cd /usr/src/linux
+cd /usr/src/linux  
 make menuconfig <-- save file
 
-make -j2 Image
-make install
-make modules
+make -j2 Image  
+make install  
+make modules  
 make modules_install
 
 ## Set up DHCP and network
 
-emerge dhcpcd
+emerge dhcpcd  
 rc-update add dhcpcd default
 
-nano /etc/conf.d/net
+nano /etc/conf.d/net  
 config_enp0s5="dhcp"
 
-cd /etc/init.d
-ln -s net.lo net.enp0s5
+cd /etc/init.d  
+ln -s net.lo net.enp0s5  
 rc-update add net.enp0s5 default
 
 ## install bootloader 
 
-emerge sys-boot/efibootmgr
-emerge --verbose sys-boot/grub
-grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=Gentoo
-grub-mkconfig -o /boot/grub/grub.cfg
+emerge sys-boot/efibootmgr  
+emerge --verbose sys-boot/grub  
+grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=Gentoo  
+grub-mkconfig -o /boot/grub/grub.cfg  
 
 ## Set password
 
@@ -117,17 +117,17 @@ passwd
 
 ## set up NTP 
 
-emerge --ask net-misc/ntp
+emerge --ask net-misc/ntp  
 rc-update add ntp-client default
 
 ## edit fstab
 
 nano /etc/fstab
 
-/dev/sda1   /boot        vfat    umask=0077     0 2
-/dev/sda2   none         swap    sw                   0 0
-/dev/sda3   /            ext4    defaults,noatime              0 1
-/dev/cdrom  /mnt/cdrom   auto    noauto,user          0 0
+/dev/sda1   /boot        vfat    umask=0077     0 2  
+/dev/sda2   none         swap    sw                   0 0  
+/dev/sda3   /            ext4    defaults,noatime              0 1  
+/dev/cdrom  /mnt/cdrom   auto    noauto,user          0 0  
 
 ## configure hostname 
 
@@ -135,10 +135,10 @@ echo gentoo > /etc/hostname
 
 ## reboot system
 
-exit
-cd
-umount -R /mnt/gentoo
-reboot
+exit  
+cd  
+umount -R /mnt/gentoo  
+reboot  
 
 
 
