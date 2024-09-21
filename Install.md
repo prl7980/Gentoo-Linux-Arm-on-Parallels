@@ -156,7 +156,7 @@ reboot
 emerge --ask sys-kernel/dracut  
 dracut
 
-## Fix clock skew
+## Fix clock skew (only if alerts at startup)
 cd /  
 touch fixtime  
 find . -cnewer /fixtime -exec touch {} \;   <-- ignore errors
