@@ -6,7 +6,7 @@ change passwod or user and root
 ssh onto machine
 su -
 
-*** configure disks
+## configure disks
 
 cfdisk /dev/sda
 
@@ -22,7 +22,7 @@ swapon /dev/sda2
 
 mount /dev/sda3 /mnt/gentoo
 
-*** download Stage 3
+## download Stage 3
 
 cd /mnt/gentoo
 
@@ -40,7 +40,7 @@ GRUB_PLATFORMS="efi-64"
 CPU_FLAGS_ARM="aes sha3 crc32 neon v8 vfpv4"
 
 
-*** Enter chroot
+## Enter chroot
 
 cp /etc/resolv.conf /mnt/gentoo/etc/
 
@@ -57,13 +57,13 @@ chroot /mnt/gentoo /bin/bash
 
 mount /dev/sda1 /boot
 
-*** uodate packages
+## uodate packages
 
 emerge-webrsync
 emerge --sync
 emerge --ask --verbose --update --deep --newuse @world
 
-*** timezone and locale
+## timezone and locale
 
 echo "America/Vancouver" > /etc/timezone
 emerge --config sys-libs/timezone-data
@@ -76,7 +76,7 @@ eselect locale set <locale>
 
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
-*** configure Kernal
+## Configure Kernal
 
 echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" | tee -a /etc/portage/package.license
 
@@ -94,7 +94,7 @@ make install
 make modules
 make modules_install
 
-*** Set up DHCP and network
+## Set up DHCP and network
 
 emerge dhcpcd
 rc-update add dhcpcd default
@@ -106,23 +106,23 @@ cd /etc/init.d
 ln -s net.lo net.enp0s5
 rc-update add net.enp0s5 default
 
-*** install bootloader 
+## install bootloader 
 
 emerge sys-boot/efibootmgr
 emerge --verbose sys-boot/grub
 grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=Gentoo
 grub-mkconfig -o /boot/grub/grub.cfg
 
-*** Set password
+## Set password
 
 passwd
 
-*** set up NTP 
+## set up NTP 
 
 emerge --ask net-misc/ntp
 rc-update add ntp-client default
 
-*** edit fstab
+## edit fstab
 
 nano /etc/fstab
 
@@ -131,11 +131,11 @@ nano /etc/fstab
 /dev/sda3   /            ext4    defaults,noatime              0 1
 /dev/cdrom  /mnt/cdrom   auto    noauto,user          0 0
 
-*** configure hostname 
+## configure hostname 
 
 echo gentoo > /etc/hostname
 
-*** reboot system
+## reboot system
 
 exit
 cd
