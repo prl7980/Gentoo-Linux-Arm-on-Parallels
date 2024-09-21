@@ -11,9 +11,9 @@ su -
 
 cfdisk /dev/sda
 
-1   efi   1GB
-2   swap   1GB
-3   ext2   62GB
+1 &emsp; efi  &emsp; &emsp;1GB  
+2 &emsp; ext2 &emsp; 62GB  
+2 &emsp; swap &emsp;1GB
 
 mkfs.vfat -F 32 /dev/sda1
 mkfs.ext4 /dev/sda3
