@@ -1,8 +1,8 @@
 ## Config VM
 
-4GB Ram
-2 CPU's
-64GB Disk
+4GB Ram  
+2 CPU's  
+64GB Disk  
 
 ## Start SSH 
 
