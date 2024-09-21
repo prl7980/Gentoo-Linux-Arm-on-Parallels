@@ -1,4 +1,4 @@
-## config VM
+## Config VM
 
 4GB Ram
 2 CPU's
