@@ -15,10 +15,10 @@ cfdisk /dev/sda
 2 &emsp; ext2 &emsp; 62GB  
 2 &emsp; swap &emsp;1GB
 
-mkfs.vfat -F 32 /dev/sda1    
+mkfs.vfat -F 32 /dev/sda1         
 mkfs.ext4 /dev/sda3
 
-mkswap /dev/sda2
+mkswap /dev/sda2      
 swapon /dev/sda2
 
 mount /dev/sda3 /mnt/gentoo
