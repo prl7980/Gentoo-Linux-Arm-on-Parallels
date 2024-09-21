@@ -59,7 +59,7 @@ mount /dev/sda1 /boot
 
 emerge-webrsync  
 emerge --sync  
-emerge --ask --verbose --update --deep --newuse @world  
+emerge --verbose --update --deep --newuse @world  
 
 ## timezone and locale
 
