@@ -115,6 +115,14 @@ nano /etc/fstab
 
 echo gentoo > /etc/hostname
 
+sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
+locale-gen
+
+eselect locale list
+eselect locale set locale
+
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
 
 
 
