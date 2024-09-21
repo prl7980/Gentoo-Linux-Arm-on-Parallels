@@ -4,7 +4,7 @@ On tty
 
 ssh onto machine    
 
-## configure disks
+## Configure disks
 
 cfdisk /dev/sda
 
@@ -20,7 +20,7 @@ swapon /dev/sda2
 
 mount /dev/sda3 /mnt/gentoo
 
-## download Stage 3
+## Download Stage 3
 
 cd /mnt/gentoo
 
@@ -55,13 +55,13 @@ chroot /mnt/gentoo /bin/bash
 
 mount /dev/sda1 /boot
 
-## uodate packages
+## Update packages
 
 emerge-webrsync  
 emerge --sync  
 emerge --verbose --update --deep --newuse @world  
 
-## timezone and locale
+## Timezone and Locale
 
 echo "America/Vancouver" > /etc/timezone  
 emerge --config sys-libs/timezone-data
@@ -74,7 +74,7 @@ eselect locale set 4  <-- check that 4 is correct
 
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
-## Configure Kernal
+## Configure Kernel
 
 echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" | tee -a /etc/portage/package.license
 
@@ -104,7 +104,7 @@ cd /etc/init.d
 ln -s net.lo net.enp0s5  
 rc-update add net.enp0s5 default
 
-## install bootloader 
+## Install bootloader 
 
 emerge sys-boot/efibootmgr  
 emerge --verbose sys-boot/grub  
@@ -115,12 +115,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 passwd
 
-## set up NTP 
+## Set up NTP 
 
 emerge --ask net-misc/ntp  
 rc-update add ntp-client default
 
-## edit fstab
+## Edit fstab
 
 nano /etc/fstab
 
@@ -129,13 +129,13 @@ nano /etc/fstab
 /dev/sda3   /            ext4    defaults,noatime              0 1  
 /dev/cdrom  /mnt/cdrom   auto    noauto,user          0 0  
 
-## configure hostname 
+## Configure hostname 
 
 echo gentoo > /etc/hostname
 
 ## Disable F0
 
-nano /etc/inittab
+nano /etc/inittab  
 comment last line
 
 ## reboot system
