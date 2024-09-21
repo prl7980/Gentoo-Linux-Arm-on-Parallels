@@ -124,6 +124,16 @@ eselect locale set locale
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 
+nano /etc/conf.d/hwclock
+set local
+
+Fix clock skew
+cd /
+touch fixtime
+find . -cnewer /fixtime -exec touch {} \; <-- ignore errors
+
+
+
 
 
 
