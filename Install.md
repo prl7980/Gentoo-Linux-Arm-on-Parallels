@@ -42,15 +42,15 @@ CPU_FLAGS_ARM="aes sha3 crc32 neon v8 vfpv4"
 
 cp /etc/resolv.conf /mnt/gentoo/etc/
 
-mount --types proc /proc /mnt/gentoo/proc
-mount --rbind /sys /mnt/gentoo/sys
-mount --make-rslave /mnt/gentoo/sys
-mount --rbind /dev /mnt/gentoo/dev
-mount --make-rslave /mnt/gentoo/dev
-mount --bind /run /mnt/gentoo/run
-mount --make-slave /mnt/gentoo/run
+mount --types proc /proc /mnt/gentoo/proc  
+mount --rbind /sys /mnt/gentoo/sys  
+mount --make-rslave /mnt/gentoo/sys  
+mount --rbind /dev /mnt/gentoo/dev  
+mount --make-rslave /mnt/gentoo/dev  
+mount --bind /run /mnt/gentoo/run  
+mount --make-slave /mnt/gentoo/run  
 
-chroot /mnt/gentoo /bin/bash
+chroot /mnt/gentoo /bin/bash  
 . /etc/profile
 
 mount /dev/sda1 /boot
