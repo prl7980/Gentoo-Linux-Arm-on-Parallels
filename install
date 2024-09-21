@@ -1,7 +1,8 @@
 
-edit /etc/init.d/sshd.conf and enable root password
-
+add user
+add user to wheel
 /etc/init.d/sshd start
+su -
 
 cfdisk /dev/sdb
 
