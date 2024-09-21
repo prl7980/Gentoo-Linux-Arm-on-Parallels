@@ -151,6 +151,16 @@ cd
 umount -R /mnt/gentoo  
 reboot  
 
+## Confiure Init Ramdisk
+
+emerge --ask sys-kernel/dracut  
+dracut
+
+## Fix clock skew
+cd /  
+touch fixtime  
+find . -cnewer /fixtime -exec touch {} \;   <-- ignore errors
+
 
 
 
