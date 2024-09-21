@@ -1,10 +1,10 @@
 
 
-add user
-add user to wheel
-change passwod or user and root
-/etc/init.d/sshd start
-ssh onto machine
+add user    
+add user to wheel    
+change passwod or user and root    
+/etc/init.d/sshd start    
+ssh onto machine    
 su -
 
 ## configure disks
