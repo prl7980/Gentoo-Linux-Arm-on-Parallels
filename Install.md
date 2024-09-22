@@ -160,7 +160,7 @@ reboot
 ## Confiure Init Ramdisk
 
 emerge sys-kernel/dracut  
-dracut
+dracut  
 grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Fix clock skew (only if alerts at startup)
