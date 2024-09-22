@@ -104,8 +104,7 @@ make modules_install
 emerge dhcpcd  
 rc-update add dhcpcd default
 
-nano /etc/conf.d/net  
-config_enp0s5="dhcp"
+echo 'config_enp0s5="dhcp"' > /etc/conf.d/net  
 
 cd /etc/init.d  
 ln -s net.lo net.enp0s5  
