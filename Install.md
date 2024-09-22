@@ -167,3 +167,6 @@ cd /
 touch fixtime  
 find . -cnewer /fixtime -exec touch {} \;   <-- ignore errors
 
+## Install linux mail
+
+emerge acct-user/mail
