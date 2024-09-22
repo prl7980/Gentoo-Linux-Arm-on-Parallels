@@ -123,7 +123,7 @@ passwd
 
 ## Set up NTP 
 
-emerge --ask net-misc/ntp  
+emerge net-misc/ntp  
 rc-update add ntp-client default
 
 ## Edit fstab
