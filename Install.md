@@ -159,7 +159,7 @@ reboot
 
 ## Confiure Init Ramdisk
 
-emerge --ask sys-kernel/dracut  
+emerge sys-kernel/dracut  
 dracut
 
 ## Fix clock skew (only if alerts at startup)
