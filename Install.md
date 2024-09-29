@@ -35,7 +35,7 @@ links
 gentoo.org     
 choose arm stage3 openrc     
 
-tar xpvf <downloaded stage 3 file> --xattrs-include='*.*' --numeric-owner
+tar xpvf <downloaded stage 3 file> --xattrs-include='\*.\*' --numeric-owner
 
 nano /etc/portage/make.conf    
 
