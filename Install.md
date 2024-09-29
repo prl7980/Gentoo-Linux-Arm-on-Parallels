@@ -141,8 +141,7 @@ echo gentoo > /etc/hostname
 
 ## Disable F0
 
-nano /etc/inittab  
-comment last line
+sed -i 's/f0:/#f0:/' /etc/inittab  
 
 ## Enable SSHD
 
