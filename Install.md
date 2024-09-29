@@ -110,7 +110,7 @@ cd /etc/init.d
 ln -s net.lo net.enp0s5  
 rc-update add net.enp0s5 default
 
-## Install bootloader 
+## Install bootloader (GRUB)
 
 emerge sys-boot/efibootmgr  
 emerge --verbose sys-boot/grub  
@@ -146,7 +146,7 @@ comment last line
 
 ## Enable SSHD
 
-nano /etc/ssh/sshd_config <-- password to yes  
+sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config   
 
 rc-update add sshd default
 
