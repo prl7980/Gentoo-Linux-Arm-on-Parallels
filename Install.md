@@ -110,13 +110,6 @@ cd /etc/init.d
 ln -s net.lo net.enp0s5  
 rc-update add net.enp0s5 default
 
-## Install bootloader (GRUB)
-
-emerge sys-boot/efibootmgr  
-emerge --verbose sys-boot/grub  
-grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=Gentoo  
-grub-mkconfig -o /boot/grub/grub.cfg  
-
 ## Set password
 
 passwd
@@ -148,6 +141,22 @@ sed -i 's/f0:/#f0:/' /etc/inittab
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config   
 
 rc-update add sshd default
+
+## Install bootloader (GRUB)
+
+emerge sys-boot/efibootmgr  
+emerge --verbose sys-boot/grub  
+grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=Gentoo  
+grub-mkconfig -o /boot/grub/grub.cfg  
+
+## Install bootloader (Systemd)  
+
+mkdir -p /etc/portage/package.use   
+echo "sys-apps/systemd-utils boot kernel-install" >> /etc/portage/package.use/systemd-utils   
+emerge --ask --oneshot --verbose sys-apps/systemd-utils   
+
+sed -i 's/#timeout 3/timeout 10/g' /boot/loader/loader.conf  
+echo default gentoo.conf >> /boot/loader/loader.conf  
 
 ## Reboot system
 
