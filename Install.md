@@ -158,6 +158,9 @@ emerge --ask --oneshot --verbose sys-apps/systemd-utils
 sed -i 's/#timeout 3/timeout 10/g' /boot/loader/loader.conf  
 echo default gentoo.conf >> /boot/loader/loader.conf  
 
+echo  -e "linux /$( ls -1 /boot/vm* | sed s/^.*\\/\//)" >> /boot/loader/entries/gentoo.conf   
+cat /boot/loader/entries/gentoo.conf
+
 ## Reboot system
 
 exit  
