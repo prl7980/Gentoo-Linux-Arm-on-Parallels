@@ -160,8 +160,7 @@ echo default gentoo.conf >> /boot/loader/loader.conf
 
 echo -e "title Gentoo Linux" > /boot/loader/entries/gentoo.conf  
 echo  -e "linux /$( ls -1 /boot/vm* | sed s/^.*\\/\//)" >> /boot/loader/entries/gentoo.conf   
-echo "options root=/dev/sda3 rootfstype=ext4 rw rootflags=rw,noatime"  
-
+echo "options root=/dev/sda3 rootfstype=ext4 rw rootflags=rw,noatime"  >> /boot/loader/entries/gentoo.conf   
 
 ## Reboot system
 
