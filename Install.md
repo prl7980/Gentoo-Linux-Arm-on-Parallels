@@ -142,14 +142,14 @@ sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd
 
 rc-update add sshd default
 
-## Install bootloader (GRUB)
+## Option 1 - Install bootloader (GRUB)
 
 emerge sys-boot/efibootmgr  
 emerge --verbose sys-boot/grub  
 grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=Gentoo  
 grub-mkconfig -o /boot/grub/grub.cfg  
 
-## Install bootloader (Systemd)  
+## Option 2 - Install bootloader (Systemd)  
 
 mkdir -p /etc/portage/package.use   
 echo "sys-apps/systemd-utils boot kernel-install" >> /etc/portage/package.use/systemd-utils   
@@ -165,7 +165,7 @@ cd
 umount -R /mnt/gentoo  
 reboot  
 
-## Confiure Init Ramdisk
+## Configure Init Ramdisk (Only if required)
 
 emerge sys-kernel/dracut  
 dracut  
