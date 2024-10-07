@@ -114,10 +114,10 @@ rc-update add net.enp0s5 default
 
 passwd
 
-## Set up NTP 
+## Set up Chrony 
 
-emerge net-misc/ntp  
-rc-update add ntp-client default
+emerge net-misc/chrony  
+rc-update add chronyd default  
 
 ## Edit fstab
 
@@ -153,7 +153,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 mkdir -p /etc/portage/package.use   
 echo "sys-apps/systemd-utils boot kernel-install" >> /etc/portage/package.use/systemd-utils   
-emerge --ask --oneshot --verbose sys-apps/systemd-utils   
+emerge --oneshot --verbose sys-apps/systemd-utils   
 
 bootctl install
 
