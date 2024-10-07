@@ -164,6 +164,10 @@ echo -e "title Gentoo Linux" > /boot/loader/entries/gentoo.conf
 echo  -e "linux /$( ls -1 /boot/vm* | sed s/^.*\\\\/\\\//)" >> /boot/loader/entries/gentoo.conf   
 echo "options root=/dev/sda3"  >> /boot/loader/entries/gentoo.conf   
 
+## Install linux mail
+
+emerge acct-user/mail  
+
 ## Reboot system
 
 exit  
@@ -182,6 +186,3 @@ cd /
 touch fixtime  
 find . -cnewer /fixtime -exec touch {} \;   <-- ignore errors
 
-## Install linux mail
-
-emerge acct-user/mail
