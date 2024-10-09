@@ -164,6 +164,10 @@ echo -e "title Gentoo Linux" > /boot/loader/entries/gentoo.conf
 echo  -e "linux /$( ls -1 /boot/vm* | sed s/^.*\\\\/\\\//)" >> /boot/loader/entries/gentoo.conf   
 echo "options root=/dev/sda3"  >> /boot/loader/entries/gentoo.conf   
 
+## EFIStub
+
+efibootmgr --create --disk /dev/sda --part 1 --label "Gentoo Linux EFISTUB" --loader /vmlinux-6.6.47-gentoo --unicode 'root='$(blkid | grep sda3 | awk '{print $5}' | sed 's/"//g')' rootfstype=ext4 rw initrd=\initramfs-6.6.47-gentoo.img'  
+
 ## Install linux mail
 
 emerge acct-user/mail  
