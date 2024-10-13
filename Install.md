@@ -196,5 +196,6 @@ find . -cnewer /fixtime -exec touch {} \;   <-- ignore errors
 emerge --ask media-sound/alsa-utils  
 alsamixer  
 edit first t lines in /sys/module/snd_hda_intel/parameters/bdl_pos_adj  -1, 64  
+echo "options snd-hda-intel model=auto" > /etc/modprobe.d/snd-hda-intel.conf  
 test sound with speaker-test -t wav -c 2  
 
