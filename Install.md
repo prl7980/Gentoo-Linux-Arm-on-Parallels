@@ -157,7 +157,6 @@ emerge --oneshot --verbose sys-apps/systemd-utils
 
 bootctl install
 
-emerge sys-boot/efibootmgr
 sed -i 's/#timeout 3/timeout 10/g' /boot/loader/loader.conf  
 echo default gentoo.conf >> /boot/loader/loader.conf  
 
@@ -167,6 +166,7 @@ echo "options root=/dev/sda3"  >> /boot/loader/entries/gentoo.conf
 
 ## Option 3 - EFIStub
 
+emerge sys-boot/efibootmgr  
 efibootmgr --create --disk /dev/sda --part 1 --label "Gentoo Linux EFISTUB" --loader /vmlinux-6.6.47-gentoo --unicode 'root='$(blkid | grep sda3 | awk '{print $5}' | sed 's/"//g')' rootfstype=ext4 rw initrd=\initramfs-6.6.47-gentoo.img'  
 
 ## Install linux mail
