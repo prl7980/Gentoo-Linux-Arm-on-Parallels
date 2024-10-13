@@ -194,7 +194,7 @@ find . -cnewer /fixtime -exec touch {} \;   <-- ignore errors
 ## Sound
 /sys/module/snd_hda_intel/parameters/bdl_pos_adjemerge media-libs/alsa-lib  
 emerge --ask media-sound/alsa-utils  
-alsamixer
+alsamixer  
 edit first t lines in /sys/module/snd_hda_intel/parameters/bdl_pos_adj  -1, 64  
 test sound with speaker-test -t wav -c 2  
 
