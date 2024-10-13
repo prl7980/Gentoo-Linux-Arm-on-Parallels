@@ -150,12 +150,14 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Option 2 - Install bootloader (Systemd)  
 
+emerge sys-boot/efibootmgr
 mkdir -p /etc/portage/package.use   
 echo "sys-apps/systemd-utils boot kernel-install" >> /etc/portage/package.use/systemd-utils   
 emerge --oneshot --verbose sys-apps/systemd-utils   
 
 bootctl install
 
+emerge sys-boot/efibootmgr
 sed -i 's/#timeout 3/timeout 10/g' /boot/loader/loader.conf  
 echo default gentoo.conf >> /boot/loader/loader.conf  
 
