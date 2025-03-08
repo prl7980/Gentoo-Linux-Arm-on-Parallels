@@ -16,8 +16,8 @@ ssh onto machine
 cfdisk /dev/sda
 
 1 &emsp; efi  &emsp; &emsp;1GB  
-2 &emsp; swap &emsp;1GB
-2 &emsp; ext2 &emsp; 62GB  
+2 &emsp; swap &emsp;1GB  
+3 &emsp; ext2 &emsp; 62GB  
 
 
 mkfs.vfat -F 32 /dev/sda1         
