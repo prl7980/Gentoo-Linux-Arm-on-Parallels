@@ -43,7 +43,7 @@ nano /etc/portage/make.conf
 MAKEOPTS="-j2"  
 ACCEPT_LICENSE="-* @FREE @BINARY-REDISTRIBUTABLE"  
 GRUB_PLATFORMS="efi-64"  
-CPU_FLAGS_ARM="aes sha3 crc32 neon v8 vfpv4"  
+CPU_FLAGS_ARM="edsp neon neon-fp16 thumb vfp vfpv3 vfpv4 vfp-d32 aes sha1 sha2 crc32 asimd asimddp asimdfhm asimdhp v4 v5 v6 v7 v8 thumb2"  
 
 
 ## Enter chroot
@@ -77,7 +77,8 @@ emerge --config sys-libs/timezone-data
 sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen  
 locale-gen
 
-eselect locale set 4  
+eselect locale list < get locale
+eselect locale set 
 
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
