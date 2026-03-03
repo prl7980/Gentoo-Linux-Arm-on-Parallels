@@ -32,8 +32,7 @@ mount /dev/sda3 /mnt/gentoo
 
 cd /mnt/gentoo
 
-links    
-gentoo.org     
+links gentoo.org     
 choose arm stage3 openrc     
 
 tar xpvf st\* --xattrs-include='\*.\*' --numeric-owner
