@@ -86,7 +86,8 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" | tee -a /etc/portage/package.license
 
 emerge sys-kernel/linux-firmware  
-emerge sys-kernel/gentoo-sources
+emerge sys-kernel/gentoo-sources   
+emerge net-wireless/wireless-regdb
 
 eselect kernel list  
 eselect kernel set 1
