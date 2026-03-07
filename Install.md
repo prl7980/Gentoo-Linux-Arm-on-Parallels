@@ -70,8 +70,8 @@ emerge --verbose --update --deep --newuse @world
 
 ## Timezone and Locale
 
-echo "America/Vancouver" > /etc/timezone  
-emerge --config sys-libs/timezone-data
+ln -sf /usr/share/zoneinfo/America/Vancouver /etc/localtime
+
 
 sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen  
 locale-gen
