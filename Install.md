@@ -109,16 +109,16 @@ sed -i ‘s/^# CONFIG_DRM_VIRTIO_GPU is not set/CONFIG_DRM_VIRTIO_GPU=y/’ .con
 sed -i ‘s/^# CONFIG_FRAMEBUFFER_CONSOLE is not set/CONFIG_FRAMEBUFFER_CONSOLE=y/’ .config  
 sed -i ‘s/^# CONFIG_INPUT_EVDEV is not set/CONFIG_INPUT_EVDEV=y/’ .config  
 sed -i ‘s/^# CONFIG_DEVTMPFS is not set/CONFIG_DEVTMPFS=y/’ .config  
-sed -i ‘s/^# CONFIG_DEVTMPFS_MOUNT is not set/CONFIG_DEVTMPFS_MOUNT=y/’ .config
-sed -i ‘s/^# CONFIG_SOUND is not set/CONFIG_SOUND=y/’ .config
-sed -i ‘s/^# CONFIG_SND is not set/CONFIG_SND=y/’ .config
-sed -i ‘s/^# CONFIG_SND_PCM is not set/CONFIG_SND_PCM=y/’ .config
-sed -i ‘s/^# CONFIG_SND_TIMER is not set/CONFIG_SND_TIMER=y/’ .config
-sed -i ‘s/^# CONFIG_SND_HDA is not set/CONFIG_SND_HDA=y/’ .config
-sed -i ‘s/^# CONFIG_SND_HDA_CORE is not set/CONFIG_SND_HDA_CORE=y/’ .config
-sed -i ‘s/^# CONFIG_SND_HDA_INTEL is not set/CONFIG_SND_HDA_INTEL=y/’ .config
-sed -i ‘s/^# CONFIG_SND_HDA_GENERIC is not set/CONFIG_SND_HDA_GENERIC=y/’ .config
-sed -i ‘s/^# CONFIG_SND_HDA_CODEC_ANALOG is not set/CONFIG_SND_HDA_CODEC_ANALOG=y/’ .config
+sed -i ‘s/^# CONFIG_DEVTMPFS_MOUNT is not set/CONFIG_DEVTMPFS_MOUNT=y/’ .config  
+sed -i ‘s/^# CONFIG_SOUND is not set/CONFIG_SOUND=y/’ .config  
+sed -i ‘s/^# CONFIG_SND is not set/CONFIG_SND=y/’ .config  
+sed -i ‘s/^# CONFIG_SND_PCM is not set/CONFIG_SND_PCM=y/’ .config  
+sed -i ‘s/^# CONFIG_SND_TIMER is not set/CONFIG_SND_TIMER=y/’ .config  
+sed -i ‘s/^# CONFIG_SND_HDA is not set/CONFIG_SND_HDA=y/’ .config  
+sed -i ‘s/^# CONFIG_SND_HDA_CORE is not set/CONFIG_SND_HDA_CORE=y/’ .config  
+sed -i ‘s/^# CONFIG_SND_HDA_INTEL is not set/CONFIG_SND_HDA_INTEL=y/’ .config  
+sed -i ‘s/^# CONFIG_SND_HDA_GENERIC is not set/CONFIG_SND_HDA_GENERIC=y/’ .config  
+sed -i ‘s/^# CONFIG_SND_HDA_CODEC_ANALOG is not set/CONFIG_SND_HDA_CODEC_ANALOG=y/’ .config  
 
 make olddefconfig
 
