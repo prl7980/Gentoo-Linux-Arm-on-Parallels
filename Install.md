@@ -102,13 +102,13 @@ make install
 make modules  
 make modules_install
 
-sed -i ‘s/^# CONFIG_DRM is not set/CONFIG_DRM=y/’ .config
-sed -i ‘s/^# CONFIG_DRM_KMS_HELPER is not set/CONFIG_DRM_KMS_HELPER=y/’ .config
-sed -i ‘s/^# CONFIG_DRM_SIMPLEDRM is not set/CONFIG_DRM_SIMPLEDRM=y/’ .config
-sed -i ‘s/^# CONFIG_DRM_VIRTIO_GPU is not set/CONFIG_DRM_VIRTIO_GPU=y/’ .config
-sed -i ‘s/^# CONFIG_FRAMEBUFFER_CONSOLE is not set/CONFIG_FRAMEBUFFER_CONSOLE=y/’ .config
-sed -i ‘s/^# CONFIG_INPUT_EVDEV is not set/CONFIG_INPUT_EVDEV=y/’ .config
-sed -i ‘s/^# CONFIG_DEVTMPFS is not set/CONFIG_DEVTMPFS=y/’ .config
+sed -i ‘s/^# CONFIG_DRM is not set/CONFIG_DRM=y/’ .config  
+sed -i ‘s/^# CONFIG_DRM_KMS_HELPER is not set/CONFIG_DRM_KMS_HELPER=y/’ .config  
+sed -i ‘s/^# CONFIG_DRM_SIMPLEDRM is not set/CONFIG_DRM_SIMPLEDRM=y/’ .config  
+sed -i ‘s/^# CONFIG_DRM_VIRTIO_GPU is not set/CONFIG_DRM_VIRTIO_GPU=y/’ .config  
+sed -i ‘s/^# CONFIG_FRAMEBUFFER_CONSOLE is not set/CONFIG_FRAMEBUFFER_CONSOLE=y/’ .config  
+sed -i ‘s/^# CONFIG_INPUT_EVDEV is not set/CONFIG_INPUT_EVDEV=y/’ .config  
+sed -i ‘s/^# CONFIG_DEVTMPFS is not set/CONFIG_DEVTMPFS=y/’ .config  
 sed -i ‘s/^# CONFIG_DEVTMPFS_MOUNT is not set/CONFIG_DEVTMPFS_MOUNT=y/’ .config
 sed -i ‘s/^# CONFIG_SOUND is not set/CONFIG_SOUND=y/’ .config
 sed -i ‘s/^# CONFIG_SND is not set/CONFIG_SND=y/’ .config
