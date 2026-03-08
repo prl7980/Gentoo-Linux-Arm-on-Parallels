@@ -95,7 +95,7 @@ eselect kernel set 1
 cd /usr/src/linux  
 make menuconfig <-- save file
 
-do Parameters below See below for GUI and Sound
+Add parameters below See below for GUI and Sound
 
 make -j2 Image  
 make install  
