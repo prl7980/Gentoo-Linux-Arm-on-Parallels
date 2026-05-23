@@ -73,7 +73,7 @@ emerge --verbose --update --deep --newuse @world
 ln -sf /usr/share/zoneinfo/America/Vancouver /etc/localtime
 
 
-sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen  
+Edit /etc/locale.gen and uncomment en_US      
 locale-gen
 
 eselect locale list < get locale
