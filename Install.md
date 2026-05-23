@@ -79,8 +79,6 @@ locale-gen
 eselect locale list < get locale
 eselect locale set 
 
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-
 ## Configure Kernel
 
 echo "sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE" | tee -a /etc/portage/package.license
